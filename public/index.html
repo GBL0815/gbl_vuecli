@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+    <title>gblcli</title>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mui/3.7.1/js/mui.min.js'></script>
+  </head>
+  <body>
+    <noscript>
+      <strong>载入失败</strong>
+    </noscript>
+    <div id="app"></div>
+  </body>
+</html>
+
+<style>
+html {
+  font-size: 100px;
+}
+a {
+  text-decoration: none
+}
+a:active {
+  color: #000000
+}
+</style>
+
+<script>
+// 安卓返回键处理    
+mui.init({
+  keyEventBind: {
+    backbutton: true // 关闭back按键监听
+  }
+})
+// 返回键处理
+var req = new RegExp('/#/(home|billing|gis|mine)$')
+var req2 = new RegExp('/#/home/column-')
+var req3 = new RegExp('/#/login')  
+mui.back = function () {
+  if (req.test(window.location.href)) return
+  if (req2.test(window.location.href)) {
+    window.location.href = window.location.href.split('/#/')[0] + '/#/home'
+    return
+  }
+  if (req3.test(window.location.href)) return
+  history.go(-1)
+}
+
+window.alert = function (name) {
+  var iframe = document.createElement('IFRAME')
+  iframe.style.display = 'none'
+  iframe.setAttribute('src', 'data:text/plain,')
+  document.documentElement.appendChild(iframe)
+  window.frames[0].window.alert(name)
+  iframe.parentNode.removeChild(iframe)
+}
+</script>
