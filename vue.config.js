@@ -8,7 +8,7 @@ module.exports = {
     // 本机ip
     host: 'localhost',
     // 自动启动浏览器
-    // open: true,
+    open: true,
     proxy: {
       '/roadMonitor': {
         target: 'http://118.31.21.83:8085/roadMonitor', // 后端地址
