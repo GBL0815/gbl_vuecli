@@ -1,7 +1,6 @@
 module.exports = {
   publicPath: './',
-  // TODO
-  assetsDir: 'dist',
+  assetsDir: 'assets',
   devServer: {
     // 本地开启的服务的端口号
     port: 8000,
@@ -10,6 +9,7 @@ module.exports = {
     // 自动启动浏览器
     open: true,
     proxy: {
+      // TODO
       '/roadMonitor': {
         target: 'http://118.31.21.83:8085/roadMonitor', // 后端地址
         changeOrigin: true,

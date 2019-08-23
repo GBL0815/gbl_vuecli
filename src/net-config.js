@@ -25,8 +25,6 @@ module.exports = {
 
 var instance = function () {
   return axios.create({
-    // TODO
-    baseURL: '/roadMonitor/',
     timeout: 10000,
     headers: { 'Authorization': localStorage.getItem('Authorization') }
   })
@@ -52,12 +50,5 @@ var commonHttpSuccessResultDeal = function (result) {
 }
 
 var dealWithErrorHandle = function (msg) {
-  // eslint-disable-next-line
-  if (plus.networkinfo.getCurrentType() === plus.networkinfo.CONNECTION_NONE) {
-    // eslint-disable-next-line
-    mui.toast('网络异常，请检查网络设置！')
-  } else {
-    // eslint-disable-next-line
-    mui.toast(msg)
-  }
+  console.log(msg)
 }
