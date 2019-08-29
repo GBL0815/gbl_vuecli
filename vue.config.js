@@ -1,6 +1,7 @@
 module.exports = {
   publicPath: './',
-  assetsDir: 'assets',
+  // TODO
+  assetsDir: 'roadMonitor',
   devServer: {
     // 本地开启的服务的端口号
     port: 8000,

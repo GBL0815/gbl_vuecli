@@ -25,6 +25,8 @@ module.exports = {
 
 var instance = function () {
   return axios.create({
+    // TODO
+    // baseURL: '/roadMonitor/',
     timeout: 10000,
     headers: { 'Authorization': localStorage.getItem('Authorization') }
   })
@@ -32,16 +34,16 @@ var instance = function () {
 
 var commonHttpSuccessResultDeal = function (result) {
   // 未登陆处理
-  var headerCookie = localStorage.getItem('Authorization')
-  var req = new RegExp('#.*')
-  var url = window.location.href
-  var resultUrl = url.replace(req, '#/login')
-  if (headerCookie === '' || headerCookie === null) {
-    window.location.href = resultUrl
-  }
+  // var headerCookie = localStorage.getItem('Authorization')
+  // var req = new RegExp('#.*')
+  // var url = window.location.href
+  // var resultUrl = url.replace(req, '#/login')
+  // if (headerCookie === '' || headerCookie === null) {
+  //   window.location.href = resultUrl
+  // }
   // 统一错误处理
   if (result.code === 700) {
-    window.location.href = resultUrl
+    // window.location.href = resultUrl
   }
   if (result.data.success === false) {
     return dealWithErrorHandle(result.data.msg)
