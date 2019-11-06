@@ -1,4 +1,4 @@
-var axios = require('axios') // axios
+var axios = require('axios')
 
 module.exports = {
   get: function (url, params) {
@@ -46,7 +46,7 @@ var commonHttpSuccessResultDeal = function (result) {
     // window.location.href = resultUrl
   }
   if (result.data.success === false) {
-    return dealWithErrorHandle(result.data.msg)
+    dealWithErrorHandle(result.data.msg)
   }
   return Promise.resolve(result.data)
 }
