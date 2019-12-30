@@ -1,56 +1,60 @@
 var axios = require('axios')
+var router = require('@/router')
 
 module.exports = {
-  get: function (url, params) {
+  get: (url, params) => {
     return instance()
       .get(url, params)
       .then(result => {
         return commonHttpSuccessResultDeal(result, url)
       })
       .catch(result => {
-        return dealWithErrorHandle('错误')
+        return dealWithErrorHandle(result)
       })
   },
-  post: function (url, param) {
+  post: (url, param) => {
     return instance()
       .post(url, param)
       .then(result => {
         return commonHttpSuccessResultDeal(result, url)
       })
       .catch(result => {
-        return dealWithErrorHandle('错误')
+        return dealWithErrorHandle(result)
       })
   }
 }
 
-var instance = function () {
+var instance = () => {
   return axios.create({
     // TODO
-    // baseURL: '/roadMonitor/',
+    // baseURL: '/net/',
     timeout: 10000,
     headers: { 'Authorization': localStorage.getItem('Authorization') }
   })
 }
 
-var commonHttpSuccessResultDeal = function (result) {
+var commonHttpSuccessResultDeal = (result) => {
   // 未登陆处理
-  // var headerCookie = localStorage.getItem('Authorization')
-  // var req = new RegExp('#.*')
-  // var url = window.location.href
-  // var resultUrl = url.replace(req, '#/login')
+  // let headerCookie = localStorage.getItem('Authorization')
   // if (headerCookie === '' || headerCookie === null) {
-  //   window.location.href = resultUrl
+  //   router.default.push('/login')
   // }
   // 统一错误处理
-  if (result.code === 700) {
-    // window.location.href = resultUrl
+  if (result.status !== 200) {
+    dealWithErrorHandle('接口请求异常')
+    return Promise.resolve('error')
   }
-  if (result.data.success === false) {
+  if (result.data.code === 700) {
+    router.default.push('/login')
+    return Promise.resolve('error')
+  }
+  if (result.data.code !== 200 || result.data.success === false) {
     dealWithErrorHandle(result.data.msg)
+    return Promise.resolve('error')
   }
   return Promise.resolve(result.data)
 }
 
-var dealWithErrorHandle = function (msg) {
+var dealWithErrorHandle = (msg) => {
   console.log(msg)
 }

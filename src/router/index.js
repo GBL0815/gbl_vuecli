@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import home from './home'
 
 Vue.use(Router)
 
@@ -21,7 +22,9 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: () => import('./views/Home.vue')
-    }
+      component: () => import('@/views/Home.vue'),
+      meta: { needntLogin: true }
+    },
+    ...home
   ]
 })

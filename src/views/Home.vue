@@ -1,17 +1,12 @@
 <template>
   <div class="home">
-    <HelloWorld msg="gblcli" />
+    <router-link to="/help">help</router-link>
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'home',
-  components: {
-    HelloWorld
-  },
   data: function () {
     return {}
   },
@@ -20,3 +15,6 @@ export default {
   methods: {}
 }
 </script>
+
+<style scoped lang="less">
+</style>

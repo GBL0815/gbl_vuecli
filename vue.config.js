@@ -1,7 +1,6 @@
 module.exports = {
   publicPath: './',
-  // TODO
-  assetsDir: 'roadMonitor',
+  // assetsDir: 'gblCLi',
   devServer: {
     // 本地开启的服务的端口号
     port: 8000,
@@ -11,19 +10,14 @@ module.exports = {
     open: true,
     proxy: {
       // TODO
-      '/roadMonitor': {
-        target: 'http://118.31.21.83:8085/roadMonitor', // 后端地址
+      '/net': {
+        target: ' https://www.easy-mock.com/mock/5d0850f61a4d9c7f880eae33/test', // 后端地址
         changeOrigin: true,
         ws: true,
         pathRewrite: {
-          '^/roadMonitor': ''
+          '^/net': ''
         }
       }
-    }
-  },
-  configureWebpack: {
-    externals: {
-      'AMap': 'AMap'
     }
   }
 }
