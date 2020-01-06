@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <router-link to="/help">help</router-link>
+    <div>{{ testStore }}</div>
   </div>
 </template>
 
@@ -8,7 +9,9 @@
 export default {
   name: 'home',
   data: function () {
-    return {}
+    return {
+      testStore: this.$store.state.home.test
+    }
   },
   created: function () {},
   mounted: function () {},

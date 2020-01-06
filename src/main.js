@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
+import store from './store/index'
 import '@/registerServiceWorker'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -16,15 +16,15 @@ Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {
-  let headerCookie = localStorage.getItem('Authorization')
-  if (!to.meta.needntLogin) {
-    if (headerCookie === '' || headerCookie === null) {
-      next({
-        path: '/home'
-      })
-      return
-    }
-  }
+  // let headerCookie = localStorage.getItem('Authorization')
+  // if (!to.meta.needntLogin) {
+  //   if (headerCookie === '' || headerCookie === null) {
+  //     next({
+  //       path: '/login'
+  //     })
+  //     return
+  //   }
+  // }
   next()
 })
 
