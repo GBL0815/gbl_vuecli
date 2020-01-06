@@ -13,7 +13,7 @@ Vue.prototype.utils = utils
 Vue.prototype.regexps = regexps
 
 Vue.use(VueAxios, axios)
-Vue.config.productionTip = false
+Vue.config.productionTip = process.env.NODE_ENV === 'development'
 
 router.beforeEach((to, from, next) => {
   // let headerCookie = localStorage.getItem('Authorization')
