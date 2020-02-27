@@ -8,9 +8,11 @@ import VueAxios from 'vue-axios'
 import '@/style/common.less'
 import utils from '@/util/util'
 import regexps from '@/util/regexp'
+import net from '@/util/net-config.js'
 
-Vue.prototype.utils = utils
-Vue.prototype.regexps = regexps
+Vue.prototype.$utils = utils
+Vue.prototype.$regexps = regexps
+Vue.prototype.$net = net
 
 Vue.use(VueAxios, axios)
 Vue.config.productionTip = process.env.NODE_ENV === 'development'

@@ -8,7 +8,7 @@ module.exports = {
     proxy: {
       // TODO
       '/net': {
-        target: ' https://www.easy-mock.com/mock/5d0850f61a4d9c7f880eae33/test', // 后端地址
+        target: 'http://127.0.0.1:8081', // 后端地址
         changeOrigin: true,
         ws: true,
         pathRewrite: {

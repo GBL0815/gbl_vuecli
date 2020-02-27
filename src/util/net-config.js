@@ -40,10 +40,6 @@ var commonHttpSuccessResultDeal = (result) => {
   //   router.default.push('/login')
   // }
   // 统一错误处理
-  if (result.status !== 200) {
-    dealWithErrorHandle('接口请求异常')
-    return Promise.resolve('error')
-  }
   if (result.data.code === 700) {
     router.default.push('/login')
     return Promise.resolve('error')
@@ -57,4 +53,5 @@ var commonHttpSuccessResultDeal = (result) => {
 
 var dealWithErrorHandle = (msg) => {
   console.log(msg)
+  return Promise.resolve('error')
 }
