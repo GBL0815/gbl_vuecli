@@ -9,13 +9,13 @@
 <script>
 export default {
   name: 'home',
-  data: function () {
+  data () {
     return {
       testStore: this.$store.state.home.test
     }
   },
-  created: function () {},
-  mounted: function () {},
+  created () {},
+  mounted () {},
   methods: {}
 }
 </script>

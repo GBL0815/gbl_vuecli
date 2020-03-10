@@ -12,20 +12,20 @@ import HelloWorld from '@/components/HelloWorld.vue'
 export default {
   name: 'help',
   components: { HelloWorld },
-  data: function () {
+  data () {
     return {
       dateTime: this.$utils.getNowDateTime(),
       date: this.$utils.getNowDate()
     }
   },
-  created: function () {
+  created () {
     this.$net.get('/net/app/staff/personal/getEnterpriseDetail').then(res => {
       if (res !== 'error') {
         console.log('请求成功')
       }
     })
   },
-  mounted: function () {},
+  mounted () {},
   methods: {}
 }
 </script>
