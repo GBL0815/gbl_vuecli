@@ -27,7 +27,7 @@ module.exports = {
 var instance = () => {
   return axios.create({
     // TODO
-    // baseURL: '/net/',
+    // baseURL: process.env.NODE_ENV === 'development' ? '' : '/base/',
     timeout: 10000,
     headers: { 'Authorization': localStorage.getItem('Authorization') }
   })
