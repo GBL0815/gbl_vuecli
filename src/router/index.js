@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from './home'
+import help from './help'
 
 Vue.use(Router)
 
@@ -25,6 +25,6 @@ export default new Router({
       component: () => import('@/views/Home.vue'),
       meta: { needntLogin: true }
     },
-    ...home
+    ...help
   ]
 })
