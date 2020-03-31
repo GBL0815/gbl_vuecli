@@ -2,7 +2,7 @@
   <div class="home">
     <router-link to="/help">help</router-link>
     <div>{{ testStore }}</div>
-    <img src="@/assets/test.jpg" alt="">
+    <img src="@/assets/img/test.jpg" alt="">
   </div>
 </template>
 
