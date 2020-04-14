@@ -1,29 +1,16 @@
 # gbl_cli
 
-## Project setup
+### 项目配置
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 项目启动
 ```
 yarn run dev
 ```
 
-### Compiles and minifies for production
+### 项目打包
 ```
 yarn run build
 ```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
