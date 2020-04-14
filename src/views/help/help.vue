@@ -2,7 +2,6 @@
   <div class="help">
     <HelloWorld msg="gblcli" />
     <li>{{dateTime}}</li>
-    <ul>{{date}}</ul>
   </div>
 </template>
 
@@ -14,8 +13,7 @@ export default {
   components: { HelloWorld },
   data () {
     return {
-      dateTime: this.$utils.getNowDateTime(),
-      date: this.$utils.getNowDate()
+      dateTime: this.$utils.getNowDate(0)
     }
   },
   created () {
