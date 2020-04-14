@@ -1,6 +1,6 @@
 # gblcli
 
-## 项目配置
+### 项目配置
 ```
 npm install
 ```
