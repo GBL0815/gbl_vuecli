@@ -15,7 +15,12 @@ export default class Help extends Vue {
     this.init()
   }
   init(): void {
-    const netTest = new Promise((resolve: any, reject: any) => {
+    Promise.all([this.getTest1(), this.getTest2()]).then((res) => {
+      console.log(res, '接口全部请求成功')
+    })
+  }
+  getTest1() {
+    return new Promise((resolve: any, reject: any) => {
       this.$net.get('/test').then((res: any) => {
         if (res !== 'error') {
           console.log('接口1请求成功')
@@ -23,16 +28,15 @@ export default class Help extends Vue {
         }
       })
     })
-    const netTest2 = new Promise((resolve: any, reject: any) => {
+  }
+  getTest2() {
+    return new Promise((resolve: any, reject: any) => {
       this.$net.get('/test').then((res: any) => {
         if (res !== 'error') {
           console.log('接口2请求成功')
           resolve(res.data)
         }
       })
-    })
-    Promise.all([netTest, netTest2]).then((res) => {
-      console.log(res, '接口全部请求成功')
     })
   }
 }
