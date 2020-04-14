@@ -15,10 +15,24 @@ export default class Help extends Vue {
     this.init()
   }
   init(): void {
-    this.$net.get('/test').then((res: any) => {
-      if (res !== 'error') {
-        console.log('请求成功')
-      }
+    const netTest = new Promise((resolve: any, reject: any) => {
+      this.$net.get('/test').then((res: any) => {
+        if (res !== 'error') {
+          console.log('接口1请求成功')
+          resolve(res.data)
+        }
+      })
+    })
+    const netTest2 = new Promise((resolve: any, reject: any) => {
+      this.$net.get('/test').then((res: any) => {
+        if (res !== 'error') {
+          console.log('接口2请求成功')
+          resolve(res.data)
+        }
+      })
+    })
+    Promise.all([netTest, netTest2]).then((res) => {
+      console.log(res, '接口全部请求成功')
     })
   }
 }
