@@ -19,7 +19,7 @@ export default {
     }
   },
   created () {
-    this.$net.get('/net/app/staff/personal/getEnterpriseDetail').then(res => {
+    this.$net.get('/test').then(res => {
       if (res !== 'error') {
         console.log('请求成功')
       }

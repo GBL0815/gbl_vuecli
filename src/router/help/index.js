@@ -1,6 +1,6 @@
 export default [{
   path: '/help',
   name: 'help',
-  component: () => import('@/views/help/help.vue'),
+  component: () => import('@/views/help/Help.vue'),
   meta: { needntLogin: true }
 }]

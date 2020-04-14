@@ -7,7 +7,7 @@ module.exports = {
     open: true,
     proxy: {
       '': {
-        target: 'http://127.0.0.1:8081', // 后端地址
+        target: 'https://mock.yonyoucloud.com/mock/5859/test', // 后端地址
         changeOrigin: true,
         ws: true
       }

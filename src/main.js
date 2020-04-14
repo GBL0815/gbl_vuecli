@@ -5,10 +5,10 @@ import store from './store/index'
 import '@/registerServiceWorker'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import '@/style/common.less'
+import '@/assets/css/common.less'
 import utils from '@/util/util'
 import regexps from '@/util/regexp'
-import net from '@/util/net-config.js'
+import net from '@/util/net-config'
 
 Vue.prototype.$utils = utils
 Vue.prototype.$regexps = regexps
