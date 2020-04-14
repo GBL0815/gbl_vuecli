@@ -1,11 +1,11 @@
 # gblcli
 
-## Normal
+## normal
 ```
 npm + less + eslint
 ```
 
-### TsCli
+### special
 ```
 yarn + less + ts + tslint
 ```
