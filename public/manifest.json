@@ -1,0 +1,15 @@
+{
+  "name": "gbl_vuecli",
+  "short_name": "gbl",
+  "icons": [
+    {
+      "src": "./favicon.ico",
+      "sizes": "68x68",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4DBA87"
+}
