@@ -42,5 +42,5 @@ export default class Help extends Vue {
 }
 </script>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 </style>
