@@ -3,7 +3,7 @@ export default {
   getNowDate(type: number) {
     const nowDate = new Date()
     const nowDay = nowDate.getDay()
-    const year = nowDate.getFullYear()
+    const year: string = nowDate.getFullYear() + ''
     let month: any = nowDate.getMonth() + 1
     if (month < 10) { month = '0' + month }
     let date: any = nowDate.getDate()

@@ -2,7 +2,7 @@
   <div class="home">
     <router-link to="/help">toHelp</router-link>
     <HelloWorld :msg="testStore"></HelloWorld>
-    <img src="@/assets/img/logo.png" alt="">
+    <img class="logo" src="@/assets/img/logo.png" alt="">
   </div>
 </template>
 
