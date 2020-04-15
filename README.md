@@ -2,7 +2,7 @@
 
 ## normal
 ```
-npm + less + eslint
+yarn + scss + eslint
 ```
 
 ### special
