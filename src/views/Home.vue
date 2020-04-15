@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <router-link to="/help">help</router-link>
+    <router-link to="/help">toHelp</router-link>
     <div>{{ testStore }}</div>
     <img src="@/assets/img/test.jpg" alt="">
   </div>
@@ -20,5 +20,5 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 </style>
