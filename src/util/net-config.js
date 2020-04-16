@@ -1,5 +1,5 @@
 var axios = require('axios')
-var router = require('@/router')
+var router = require('@/route')
 
 module.exports = {
   get: (url, params) => {
