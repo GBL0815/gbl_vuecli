@@ -21,6 +21,7 @@
     "trailing-comma": false,
     "whitespace": true,
     "no-var-requires": false,
-    "no-console": false
+    "no-console": false,
+    "no-empty": false
   }
 }

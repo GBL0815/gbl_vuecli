@@ -21,21 +21,17 @@ export default class Help extends Vue {
   }
   getTest1() {
     return new Promise((resolve: any, reject: any) => {
-      this.$net.get('/test').then((res: any) => {
-        if (res !== 'error') {
-          console.log('接口1请求成功')
-          resolve(res.data)
-        }
+      this.$net('/test').then((res: any) => {
+        console.log('接口1请求成功')
+        resolve(res.data)
       })
     })
   }
   getTest2() {
     return new Promise((resolve: any, reject: any) => {
-      this.$net.get('/test').then((res: any) => {
-        if (res !== 'error') {
-          console.log('接口2请求成功')
-          resolve(res.data)
-        }
+      this.$net('/test').then((res: any) => {
+        console.log('接口2请求成功')
+        resolve(res.data)
       })
     })
   }
