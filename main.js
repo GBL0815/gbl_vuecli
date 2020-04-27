@@ -5,6 +5,7 @@ import utils from '@/util/util'
 import regexps from '@/util/regexp'
 import net from '@/util/net-config'
 import '@/static/css/common.scss'
+import uCharts from '@/static/js/u-charts.js'
 
 Vue.config.productionTip = false
 

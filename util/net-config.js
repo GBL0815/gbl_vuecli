@@ -1,6 +1,6 @@
 const baseUrl = 'https://mock.yonyoucloud.com/mock/5859/test'
-function net(url, data = {}, method = 'get') {
-	let header = method === 'get' ? {
+const net = (url, data = {}, method = 'get') => {
+	const header = method === 'get' ? {
 		'Authorization': uni.getStorageSync('token'),
 	  'X-Requested-With': 'XMLHttpRequest',
 	  'Accept': 'application/json',
@@ -13,35 +13,31 @@ function net(url, data = {}, method = 'get') {
 	
 	return new Promise((resolve, reject) => {
 		uni.request({
-			url: baseUrl + url, // 测试服
+			url: baseUrl + url,
 			data,
 			method,
 			header,
 			dataType: 'json',
 			success: (res) => {
-				if (res.statusCode == 200) {
-					if (res.data.code == 500) {
-						uni.showToast({
-							icon: 'none',
-							title: '登录信息过期'
-						});
-						setTimeout(() => {
-							uni.reLaunch({ url: '../index/index' })
-						}, 1500)
-						return (new Promise((resolve, reject)=>{}))
-					}
-					resolve(res.data)
-				} else {
+				if (res.data.code == 500) {
 					uni.showToast({
 						icon: 'none',
-						title: res.errMsg,
-						duration: 2000
-					})
+						title: '登录信息过期'
+					});
+					setTimeout(() => {
+						uni.reLaunch({ url: '../index/index' })
+					}, 1500)
 					return (new Promise((resolve, reject)=>{}))
 				}
+				resolve(res.data)
 			}
 		})
 	}).catch(e => {
+		uni.showToast({
+			icon: 'none',
+			title: res.errMsg,
+			duration: 2000
+		})
 		console.log(e)
 	})
 }
