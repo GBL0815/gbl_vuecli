@@ -17,10 +17,8 @@ export default {
     }
   },
   created () {
-    this.$net.get('/test').then(res => {
-      if (res !== 'error') {
-        console.log('请求成功')
-      }
+    this.$net('/test').then(res => {
+      console.log('请求成功')
     })
   },
   mounted () {},
