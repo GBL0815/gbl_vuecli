@@ -1,11 +1,6 @@
-# gblcli
+# gbl_cli
 
-## normal
+### 项目配置
 ```
-yarn + scss + eslint
-```
-
-### special
-```
-yarn + scss + ts + tslint
+请使用HBuilder进行开发
 ```
