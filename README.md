@@ -2,7 +2,7 @@
 
 ### 项目配置
 ```
-uni-ui + cool-uni
+uni-ui + cool-uni + u-charts
 ```
 
 ### 项目启动
