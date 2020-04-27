@@ -1,17 +1,22 @@
 <template>
-	<view class="container">
-		<text>{{ time }}</text>
+	<view>
+		<navigator url="../help/help" open-type="navigate">
+			<text>{{ testStore }}</text>
+		</navigator>
+		<cl-toast ref="toast"></cl-toast>
 	</view>
 </template>
 
 <script>
 	export default {
+		name: 'index',
 		data() {
 			return {
-				time: 10102010
+				testStore: this.$store.state.index.test
 			}
 		},
-		methods: {
+		mounted() {
+			this.$refs["toast"].open(`${this.testStore}开发中`)
 		}
 	}
 </script>

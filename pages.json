@@ -2,7 +2,12 @@
 	"pages": [{
 		"path": "pages/index/index",
 		"style": {
-			"navigationBarTitleText": "gbl_uniApp"
+			"navigationBarTitleText": "index"
+		}
+	}, {
+		"path": "pages/help/help",
+		"style": {
+			"navigationBarTitleText": "help"
 		}
 	}],
 	"globalStyle": {
