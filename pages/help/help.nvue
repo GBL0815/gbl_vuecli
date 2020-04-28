@@ -12,6 +12,12 @@
 				dateTime: this.$utils.getNowDate(0)
 			}
 		},
+		onPullDownRefresh() {
+			console.log('refesh')
+			setTimeout(() => {
+				uni.stopPullDownRefresh()
+			}, 1000)
+		},
 		mounted () {
 			this.$net('/test').then(res => {
 				console.log(res, '请求成功')

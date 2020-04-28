@@ -15,6 +15,12 @@
 				testStore: this.$store.state.index.test
 			}
 		},
+		onPullDownRefresh() {
+			console.log('refesh')
+			setTimeout(() => {
+				uni.stopPullDownRefresh()
+			}, 1000)
+		},
 		mounted() {
 			this.$refs["toast"].open(`${this.testStore}开发中`)
 		}

@@ -9,12 +9,29 @@
 		"style": {
 			"navigationBarTitleText": "help"
 		}
-	}],
+	}    ,{
+            "path" : "pages/help/help",
+            "style" : {}
+        }
+    ],
 	"globalStyle": {
+		"navigationBarBackgroundColor": "#CCCCCC",
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#007AFF",
-		"backgroundColor": "#FFFFFF"
+		"backgroundColor": "#FFFFFF",
+		"enablePullDownRefresh": true,
+		"app-plus": {
+			"scrollIndicator": "none",
+			"titleNView": {
+				"splitLine": {
+					"color": "#000000"
+				}
+			},
+			"pullToRefresh": {
+			  "support": true,
+			  "color": "#333333"
+			}
+		}
 	},
 	"easycom": {
 		"autoscan": true,
