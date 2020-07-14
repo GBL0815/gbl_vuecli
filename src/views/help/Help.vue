@@ -21,7 +21,7 @@ export default class Help extends Vue {
   }
   getTest1() {
     return new Promise((resolve: any, reject: any) => {
-      this.$net('/test').then((res: any) => {
+      this.$net(`${process.env.VUE_APP_URL}/test`).then((res: any) => {
         console.log('接口1请求成功')
         resolve(res.data)
       })
@@ -29,7 +29,7 @@ export default class Help extends Vue {
   }
   getTest2() {
     return new Promise((resolve: any, reject: any) => {
-      this.$net('/test').then((res: any) => {
+      this.$net(`${process.env.VUE_APP_URL}/test`).then((res: any) => {
         console.log('接口2请求成功')
         resolve(res.data)
       })

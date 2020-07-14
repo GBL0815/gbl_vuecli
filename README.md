@@ -1,16 +1,13 @@
 # gbl_cli
 
-### 项目配置
-```
+## 项目配置
+
 yarn install
-```
 
-### 项目启动
-```
-yarn run dev
-```
+## 项目启动
 
-### 项目打包
-```
-yarn run build
-```
+yarn dev
+
+## 项目打包
+
+yarn build
