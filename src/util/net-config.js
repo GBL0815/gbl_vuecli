@@ -21,11 +21,11 @@ const net = (url, method = 'get', params) => {
       // let headerCookie = localStorage.getItem('Authorization')
       // if (headerCookie === '' || headerCookie === null) {
       //   return new Promise((resolve, reject) => {}).catch(e => { console.log(e) })
-      //   router.default.push('/login')
+      //   router.push('/login')
       // }
       // 统一错误处理
       if (res.data.code === 700) {
-        router.default.push('/login')
+        router.push('/login')
         return new Promise((resolve, reject) => {}).catch(e => { console.log(e) })
       }
       if (res.data.code !== 0 || res.data.success === false) {
