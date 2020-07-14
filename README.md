@@ -1,16 +1,13 @@
 # gblcli
 
-### 项目配置
-```
-npm install
-```
+## 项目配置
 
-### 项目启动
-```
-npm run dev
-```
+yarn install
 
-### 项目打包
-```
-npm run build
-```
+## 项目启动
+
+yarn dev
+
+## 项目打包
+
+yarn build

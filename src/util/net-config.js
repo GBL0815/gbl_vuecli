@@ -1,5 +1,5 @@
-const axios = require('axios')
-const router = require('@/route')
+import axios from 'axios'
+import router from '@/route'
 
 const net = (url, method = 'get', params) => {
   const netServer = axios({

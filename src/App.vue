@@ -10,11 +10,11 @@
 <script>
 export default {
   name: 'app',
-  data: function () {
+  data () {
     return {}
   },
-  created: function () {},
-  mounted: function () {},
+  created () {},
+  mounted () {},
   methods: {}
 }
 </script>
