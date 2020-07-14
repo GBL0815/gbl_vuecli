@@ -1,16 +1,19 @@
 # gblcli
 
-### normal
-```
+## vue
+
+vue-cli3
 yarn + scss + eslint
-```
 
-### special
-```
+## vue+ts
+
+vue-cli3
 yarn + scss + ts + tslint
-```
 
-### uniApp
-```
-待定
-```
+## uniApp
+
+有待更新
+
+## react
+
+有待更新
