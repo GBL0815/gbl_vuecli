@@ -3,7 +3,7 @@ const router = require('@/route')
 
 const net = (url: string, method = 'get', params: any) => {
   const netServer = axios({
-    url,
+    url: process.env.VUE_APP_URL + url,
     method,
     params,
     // TODO
