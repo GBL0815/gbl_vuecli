@@ -1,19 +1,13 @@
 # gblcli
 
-## vue
+## 项目配置
 
-vue-cli3
-yarn + scss + eslint
+yarn install
 
-## vue+ts
+## 项目启动
 
-vue-cli3
-yarn + scss + ts + tslint
+yarn start
 
-## uniApp
+## 项目打包
 
-有待更新
-
-## react
-
-有待更新
+yarn build
