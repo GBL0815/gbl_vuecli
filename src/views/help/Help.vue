@@ -17,7 +17,7 @@ export default {
     }
   },
   created () {
-    this.$net(`${process.env.VUE_APP_URL}/test`).then(res => {
+    this.$net('/test').then(res => {
       console.log('请求成功')
     })
   },
