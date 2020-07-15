@@ -1,6 +1,11 @@
 // @flow
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import './home.scss'
+
+import { add, minus } from '@/redux/action'
+
+import Testcomponent from '@/components/testcomponent/testcomponent'
 
 class home extends Component {
   state = {
@@ -35,14 +40,26 @@ class home extends Component {
   testFunction = () => {
     console.log(this.state.name)
   }
+  consoleState = () => {
+    console.log(this.props.counter)
+  }
 
   render() {
+    const { counter, add, minus } = this.props
     return (
       <div className="home">
-        <span>testtest</span>
+        <div onClick={this.consoleState}>{counter}</div>
+        <div onClick={add}>add</div>
+        <div onClick={minus}>minus</div>
+        <Testcomponent test="test" />
       </div>
     )
   }
 }
 
-export default home;
+export default connect(
+  state => ({counter: state.counter}),
+  {
+     add, minus
+  }
+)(home)
