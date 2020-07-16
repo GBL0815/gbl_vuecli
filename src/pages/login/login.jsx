@@ -9,13 +9,17 @@ class login extends Component {
   componentDidUpdate() {}
   componentWillUnmount() {}
 
+  linkHome = () => {
+    this.props.history.push({ pathname: '/home', query: { test: 'tessst' } })
+  }
+
   render() {
     return (
       <div className="login">
-        <span>login</span>
+        <span onClick={ this.linkHome }>login</span>
       </div>
     )
   }
 }
 
-export default login;
+export default login

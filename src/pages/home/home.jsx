@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import './home.scss'
 
@@ -31,7 +32,7 @@ class home extends Component {
     console.log(`组件更新时调用${nextProps},${nextState}`)
   }
   componentDidUpdate() {
-    console.log('更新完成后调用')
+    console.log('更新完成后调用', this.props.location.query)
   }
   componentWillUnmount() {
     console.log('卸载时调用')
@@ -52,6 +53,15 @@ class home extends Component {
         <div onClick={add}>add</div>
         <div onClick={minus}>minus</div>
         <Testcomponent test="test" />
+        <div>
+          {
+            this.props.routes.map(({path, Component, exact = true, child = []}, key) => {
+              return <Route exact = { exact } path = { path } key = { key }
+                render = { props => (<Component { ...props } routes = { child } />) }
+              />
+            })
+          }
+        </div>
       </div>
     )
   }

@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react'
+import { withRouter } from "react-router-dom"
 import PropTypes from 'prop-types'
 
 class testcomponent extends Component {
@@ -10,10 +11,14 @@ class testcomponent extends Component {
   componentDidUpdate() {}
   componentWillUnmount() {}
 
+  linkLogin = () => {
+    this.props.history.push('/home/login')
+  }
+
   render() {
     return (
       <div className="testcomponent">
-        <span>{this.props.test}</span>
+        <span onClick={ this.linkLogin }>{this.props.test}</span>
       </div>
     )
   }
@@ -23,4 +28,4 @@ testcomponent.propTypes = {
   test: PropTypes.string
 }
 
-export default testcomponent;
+export default withRouter(testcomponent)
