@@ -11,6 +11,7 @@ class testcomponent extends Component {
   componentWillUnmount() {}
 
   linkLogin = () => {
+    this.props.callback()
     this.props.history.push('/home/login')
   }
 

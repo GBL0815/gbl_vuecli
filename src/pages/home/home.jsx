@@ -21,7 +21,6 @@ class home extends Component {
     console.log('渲染后调用，只调用一次', React.$util.getNowDate(0))
     React.$net('/test').then(res => {
       console.log('请求成功')
-      this.testFunction()
     })
   }
   componentWillReceiveProps(nextProps) {
@@ -51,7 +50,7 @@ class home extends Component {
         <div onClick={this.consoleState}>{counter}</div>
         <div onClick={add}>add</div>
         <div onClick={minus}>minus</div>
-        <Testcomponent test="test" />
+        <Testcomponent test="test" callback={this.testFunction} />
         <div>
           {
             this.props.routes.map(({path, Component, exact = true, child = []}, key) => {
