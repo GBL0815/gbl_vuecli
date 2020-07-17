@@ -1,4 +1,3 @@
-// @flow
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
     // IPV6 
@@ -29,8 +28,7 @@ export function register(config) {
         // 注册成功后，打印信息
         navigator.serviceWorker.ready.then(() => {
           console.log(
-            'This web app is being served cache-first by a service ' +
-              'worker. To learn more, visit https://bit.ly/CRA-PWA'
+            '注册成功，更多有关信息请访问 https://bit.ly/CRA-PWA'
           )
         })
       } else {
@@ -57,15 +55,14 @@ function registerValidSW(swUrl, config) {
             if (navigator.serviceWorker.controller) {
               // 安装之后判断安装状态进行提示
               console.log(
-                'New content is available and will be used when all ' +
-                  'tabs for this page are closed. See https://bit.ly/CRA-PWA.'
+                '有新的内容以更新完毕。'
               )
 
               if (config && config.onUpdate) {
                 config.onUpdate(registration)
               }
             } else {
-              console.log('Content is cached for offline use.')
+              console.log('内容被缓存以供离线使用。')
 
               if (config && config.onSuccess) {
                 config.onSuccess(registration)
@@ -76,7 +73,7 @@ function registerValidSW(swUrl, config) {
       }
     })
     .catch(error => {
-      console.error('Error during service worker registration:', error)
+      console.error('注册期间发生错误：', error)
     })
 }
 
@@ -105,7 +102,7 @@ function checkValidServiceWorker(swUrl, config) {
     })
     .catch(() => {
       console.log(
-        'No internet connection found. App is running in offline mode.'
+        '找不到互联网连接，应用正在离线模式下运行。'
       )
     })
 }

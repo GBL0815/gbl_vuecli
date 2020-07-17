@@ -1,4 +1,3 @@
-// @flow
 import home from '@/pages/home/home'
 import loginRouters from './login/login'
 

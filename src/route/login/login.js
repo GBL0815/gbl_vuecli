@@ -1,4 +1,3 @@
-// @flow
 import login from '@/pages/login/login'
 
 const loginRouters = [
