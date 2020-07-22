@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import './home.scss'
@@ -7,7 +7,7 @@ import { add, minus } from '@/redux/action'
 
 import Testcomponent from '@/components/testcomponent/testcomponent'
 
-class home extends Component {
+class home extends PureComponent {
   state = {
     name: 'gblTest'
   }

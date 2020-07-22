@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-class login extends Component {
+class login extends PureComponent {
   componentWillMount() {}
   componentDidMount() {}
   componentWillReceiveProps(nextProps) {}

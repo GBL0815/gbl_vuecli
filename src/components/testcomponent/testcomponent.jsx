@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { withRouter } from "react-router-dom"
 import PropTypes from 'prop-types'
 
-class testcomponent extends Component {
+class testcomponent extends PureComponent {
   componentWillMount() {}
   componentDidMount() {}
   componentWillReceiveProps(nextProps) {}
