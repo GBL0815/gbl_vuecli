@@ -1,6 +1,6 @@
 {
   "name": "gbl_cli",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
@@ -23,9 +23,11 @@
     "@vue/cli-plugin-pwa": "^4.3.0",
     "@vue/cli-plugin-typescript": "^4.3.0",
     "@vue/cli-service": "^4.3.0",
+    "image-webpack-loader": "^6.0.0",
     "lint-staged": "^9.5.0",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
+    "terser-webpack-plugin": "^4.0.0",
     "typescript": "~3.8.3",
     "vue-template-compiler": "^2.6.11"
   },
