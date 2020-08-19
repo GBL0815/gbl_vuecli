@@ -4,17 +4,15 @@
   </div>
 </template>
 
-<style lang="less">
-</style>
-
 <script>
+// import { ref, computed, getCurrentInstance, onMounted } from 'vue'
+
 export default {
-  name: 'app',
-  data () {
+  setup () {
     return {}
-  },
-  created () {},
-  mounted () {},
-  methods: {}
+  }
 }
 </script>
+
+<style lang="sass">
+</style>

@@ -10,7 +10,7 @@ const net = (url, method = 'get', params) => {
     // baseURL: process.env.NODE_ENV === 'development' ? '' : '/base/',
     timeout: 10000,
     headers: {
-      'Authorization': localStorage.getItem('Authorization'),
+      Authorization: localStorage.getItem('Authorization'),
       'Content-Type': 'application/json;charset=UTF-8'
     }
   })

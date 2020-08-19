@@ -1,22 +1,43 @@
 <template>
   <div class="home">
-    <router-link to="/help">toHelp</router-link>
+    <div @click="goHelpRoute">{{ goHelp }}</div>
     <div>{{ testStore }}</div>
+    <div>{{ testGetter }}</div>
     <img src="@/assets/img/test.jpg" alt="">
   </div>
 </template>
 
 <script>
+import { ref, computed, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
+
 export default {
   name: 'home',
-  data () {
-    return {
-      testStore: this.$store.state.home.test
+  setup () {
+    const router = useRouter()
+    const store = useStore()
+    // 变量
+    const goHelp = ref('toHelp')
+    // 计算属性
+    const testStore = computed(() => store.state.home.test)
+    const testGetter = computed(() => store.getters.test)
+    // 生命周期
+    onMounted(() => {
+      store.dispatch('test')
+    })
+    // 方法
+    const goHelpRoute = () => {
+      router.push('/help')
     }
-  },
-  created () {},
-  mounted () {},
-  methods: {}
+
+    return {
+      goHelp,
+      testStore,
+      testGetter,
+      goHelpRoute
+    }
+  }
 }
 </script>
 

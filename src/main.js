@@ -1,21 +1,10 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import router from './route'
 import store from './store/index'
 import '@/registerServiceWorker'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
 import '@/assets/css/common.scss'
-import utils from '@/util/util'
-import regexps from '@/util/regexp'
-import net from '@/util/net-config'
-
-Vue.prototype.$utils = utils
-Vue.prototype.$regexps = regexps
-Vue.prototype.$net = net
-
-Vue.use(VueAxios, axios)
-Vue.config.productionTip = process.env.NODE_ENV === 'development'
+import mixins from '@/util/mixins'
 
 router.beforeEach((to, from, next) => {
   // let headerCookie = localStorage.getItem('Authorization')
@@ -30,8 +19,10 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+const app = createApp(App)
+app.use(store)
+app.use(router)
+app.mixin(mixins)
+app.config.productionTip = process.env.NODE_ENV === 'development'
+
+app.mount('#app')
