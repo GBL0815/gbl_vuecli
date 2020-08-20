@@ -2,6 +2,8 @@
   <div class="help">
     <HelloWorld msg="gblcli" />
     <li @click="goBack">{{dateTime}}</li>
+    <li @click="goC">goC</li>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -29,10 +31,14 @@ export default {
     const goBack = () => {
       router.push('/home')
     }
+    const goC = () => {
+      router.push('/help/helpC')
+    }
 
     return {
       dateTime,
-      goBack
+      goBack,
+      goC
     }
   }
 }
