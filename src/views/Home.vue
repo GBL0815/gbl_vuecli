@@ -8,20 +8,22 @@
 </template>
 
 <script>
-import { ref, computed, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-import { useStore } from 'vuex'
+import { computed, onMounted, ref, watchEffect } from 'vue'
+import util from '@/util/index'
 
 export default {
   name: 'home',
   setup () {
-    const router = useRouter()
-    const store = useStore()
+    const { router, store } = util()
     // 变量
     const goHelp = ref('toHelp')
     // 计算属性
     const testStore = computed(() => store.state.home.test)
     const testGetter = computed(() => store.getters.test)
+    // 副作用
+    watchEffect(() => {
+      console.log(testStore)
+    })
     // 生命周期
     onMounted(() => {
       store.dispatch('test')

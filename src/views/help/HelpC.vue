@@ -5,14 +5,15 @@
 </template>
 
 <script>
-import { computed, getCurrentInstance } from 'vue'
+import { computed } from 'vue'
+import util from '@/util/index'
 
 export default {
   name: 'helpC',
   setup () {
-    const { ctx } = getCurrentInstance()
+    const { utils } = util()
     // 计算属性
-    const dateTime = computed(() => ctx.getNowDate(1))
+    const dateTime = computed(() => utils.getNowDate(1))
 
     return {
       dateTime

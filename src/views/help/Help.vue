@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import { computed, getCurrentInstance, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
+import { computed, onMounted } from 'vue'
+import util from '@/util/index'
 
 import HelloWorld from '@/components/HelloWorld.vue'
 
@@ -17,13 +17,12 @@ export default {
   name: 'help',
   components: { HelloWorld },
   setup () {
-    const { ctx } = getCurrentInstance()
-    const router = useRouter()
+    const { router, utils, net } = util()
     // 计算属性
-    const dateTime = computed(() => ctx.getNowDate(0))
+    const dateTime = computed(() => utils.getNowDate(0))
     // 生命周期
     onMounted(() => {
-      ctx.net('/test').then(res => {
+      net('/test').then(res => {
         console.log('请求成功')
       })
     })
