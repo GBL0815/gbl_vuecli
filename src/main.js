@@ -2,9 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './route'
 import store from './store/index'
+import utilMixin from '@/mixins/index'
 import '@/registerServiceWorker'
-import '@/assets/css/common.scss'
-import mixins from '@/util/mixins'
+import '@/style/common.scss'
 
 router.beforeEach((to, from, next) => {
   // let headerCookie = localStorage.getItem('Authorization')
@@ -22,7 +22,7 @@ router.beforeEach((to, from, next) => {
 const app = createApp(App)
 app.use(store)
 app.use(router)
-app.mixin(mixins)
+app.mixin(utilMixin)
 app.config.productionTip = process.env.NODE_ENV === 'development'
 
 app.mount('#app')

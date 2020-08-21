@@ -3,7 +3,7 @@
     <div @click="goHelpRoute">{{ goHelp }}</div>
     <div>{{ testStore }}</div>
     <div>{{ testGetter }}</div>
-    <img src="@/assets/img/test.jpg" alt="">
+    <img src="@/assets/test.jpg" alt="">
   </div>
 </template>
 
