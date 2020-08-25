@@ -1,10 +1,8 @@
 {
   "name": "gblcli",
   "version": "0.9.9",
-  "private": true,
   "scripts": {
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
     "dev": "vue-cli-service serve"
   },
   "dependencies": {
@@ -16,7 +14,6 @@
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.11.0",
     "@vue/cli-plugin-babel": "^4.5.4",
     "@vue/cli-plugin-eslint": "^4.5.4",
     "@vue/cli-plugin-pwa": "^4.5.4",
