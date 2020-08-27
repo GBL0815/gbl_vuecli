@@ -3,7 +3,7 @@ import help from './help'
 
 export default createRouter({
   history: createWebHashHistory(),
-  base: process.env.BASE_URL | '',
+  base: process.env.BASE_URL,
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition

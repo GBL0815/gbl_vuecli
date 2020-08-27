@@ -5,7 +5,7 @@ import netConfig from './net-config'
 import regexp from './regexp'
 import util from './util'
 
-const utilMixin = () => {
+const utils = () => {
   const router = useRouter()
   const store = useStore()
   const net = netConfig
@@ -21,4 +21,4 @@ const utilMixin = () => {
   }
 }
 
-export default utilMixin
+export default utils

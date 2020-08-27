@@ -1,6 +1,7 @@
 {
   "name": "gblcli",
-  "version": "0.9.9",
+  "version": "1.0.0",
+  "license": "ISC",
   "scripts": {
     "build": "vue-cli-service build",
     "dev": "vue-cli-service serve"
