@@ -2,13 +2,21 @@
 
 ## vue
 
-vue-cli3
-yarn + scss + eslint
+vue-cli4 + vue3.x
+yarn
+axios + scss + eslint + pwa
+
+## vue(vite)
+
+vite + vue3.x
+yarn
+axios + scss + eslint
 
 ## vue+ts
 
-vue-cli3
-yarn + scss + ts + tslint
+vue-cli3 + vue2.x
+yarn
+scss + ts + tslint + pwa
 
 ## uniApp
 
