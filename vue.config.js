@@ -25,15 +25,6 @@ module.exports = {
       )
     }
   },
-  chainWebpack: config => {
-    // 图片压缩
-    config.module
-      .rule('images')
-      .use('image-webpack-loader')
-      .loader('image-webpack-loader')
-      .options({ bypassOnDebug: true })
-      .end()
-  },
   devServer: {
     disableHostCheck: true,
     // 自动启动浏览器
