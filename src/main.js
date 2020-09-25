@@ -4,6 +4,7 @@ import router from './route'
 import store from './store/index'
 import '@/registerServiceWorker'
 import '@/style/common.scss'
+import net from '@/util/net-config'
 
 router.beforeEach((to, from, next) => {
   // let headerCookie = localStorage.getItem('Authorization')
@@ -22,5 +23,7 @@ const app = createApp(App)
 app.use(store)
 app.use(router)
 app.config.productionTip = process.env.NODE_ENV === 'development'
+app.config.devtools = process.env.NODE_ENV === 'development'
+app.config.globalProperties.$net = net
 
 app.mount('#app')

@@ -1,23 +1,20 @@
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 
-import netConfig from './net-config'
 import regexp from './regexp'
-import util from './util'
+import utilFun from './utils'
 
 const utils = () => {
   const router = useRouter()
   const store = useStore()
-  const net = netConfig
   const regexps = regexp
-  const utils = util
+  const util = utilFun
 
   return {
     router,
     store,
     regexps,
-    utils,
-    net
+    util
   }
 }
 

@@ -7,39 +7,35 @@
   </div>
 </template>
 
-<script>
-import { computed, onMounted } from 'vue'
-import util from '@/util/index'
-
+<script setup>
+import { computed, onMounted, getCurrentInstance } from 'vue'
+import utils from '@/util/index'
+// 组件
 import HelloWorld from '@/components/HelloWorld.vue'
 
-export default {
-  name: 'help',
-  components: { HelloWorld },
-  setup () {
-    const { router, utils, net } = util()
-    // 计算属性
-    const dateTime = computed(() => utils.getNowDate(0))
-    // 生命周期
-    onMounted(() => {
-      net('/test').then(res => {
-        console.log('请求成功')
-      })
-    })
-    // 方法
-    const goBack = () => {
-      router.push('/home')
-    }
-    const goC = () => {
-      router.push('/help/helpC')
-    }
+const { ctx } = getCurrentInstance()
+const { router, util } = utils()
+// 计算属性
+const dateTime = computed(() => util.getNowDate(0))
+// 生命周期
+onMounted(() => {
+  ctx.$net('/test').then(res => {
+    console.log('请求成功')
+  })
+})
+// 方法
+const goBack = () => {
+  router.push('/home')
+}
+const goC = () => {
+  router.push('/help/helpC')
+}
 
-    return {
-      dateTime,
-      goBack,
-      goC
-    }
-  }
+export {
+  HelloWorld,
+  dateTime,
+  goBack,
+  goC
 }
 </script>
 

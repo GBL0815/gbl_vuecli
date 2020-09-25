@@ -4,15 +4,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
 // import { ref, computed, getCurrentInstance, onMounted } from 'vue'
 
-export default {
-  setup () {
-    return {}
-  }
-}
 </script>
 
-<style lang="sass">
+<style scoped lang="sass">
 </style>

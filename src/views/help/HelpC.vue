@@ -4,21 +4,16 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { computed } from 'vue'
-import util from '@/util/index'
+import utils from '@/util/index'
 
-export default {
-  name: 'helpC',
-  setup () {
-    const { utils } = util()
-    // 计算属性
-    const dateTime = computed(() => utils.getNowDate(1))
+const { util } = utils()
+// 计算属性
+const dateTime = computed(() => util.getNowDate(1))
 
-    return {
-      dateTime
-    }
-  }
+export {
+  dateTime
 }
 </script>
 
