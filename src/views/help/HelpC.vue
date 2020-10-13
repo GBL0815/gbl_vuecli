@@ -4,16 +4,20 @@
   </div>
 </template>
 
-<script setup>
+<script>
 import { computed } from 'vue'
 import utils from '@/util/index'
 
-const { util } = utils()
-// 计算属性
-const dateTime = computed(() => util.getNowDate(1))
+export default {
+  setup () {
+    const { util } = utils()
+    // 计算属性
+    const dateTime = computed(() => util.getNowDate(1))
 
-export {
-  dateTime
+    return {
+      dateTime
+    }
+  }
 }
 </script>
 
