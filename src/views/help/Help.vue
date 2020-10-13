@@ -6,33 +6,35 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Vue } from 'vue-class-component'
 
-@Component
 export default class Help extends Vue {
-  dateTime: string = this.$utils.getNowDate(0)
-  created(): void {
+  dateTime = '123'
+  created (): void {
     this.init()
   }
-  init(): void {
+
+  init (): void {
     Promise.all([this.getTest1(), this.getTest2()]).then((res) => {
       console.log(res, '接口全部请求成功')
     })
   }
-  getTest1() {
+
+  getTest1 () {
     return new Promise((resolve: any, reject: any) => {
-      this.$net('/test').then((res: any) => {
-        console.log('接口1请求成功')
-        resolve(res.data)
-      })
+      // this.$net('/test').then((res: any) => {
+      //   console.log('接口1请求成功')
+      //   resolve(res.data)
+      // })
     })
   }
-  getTest2() {
+
+  getTest2 () {
     return new Promise((resolve: any, reject: any) => {
-      this.$net('/test').then((res: any) => {
-        console.log('接口2请求成功')
-        resolve(res.data)
-      })
+      // this.$net('/test').then((res: any) => {
+      //   console.log('接口2请求成功')
+      //   resolve(res.data)
+      // })
     })
   }
 }

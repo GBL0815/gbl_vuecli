@@ -1,21 +1,18 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import router from './route'
 import store from './store'
 import './registerServiceWorker'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
 import '@/assets/css/common.scss'
-import utils from '@/util/util'
-import regexps from '@/util/regexp'
-import net from '@/util/net-config'
+// import utils from '@/util/util'
+// import regexps from '@/util/regexp'
+// import net from '@/util/net-config'
 
-Vue.prototype.$utils = utils
-Vue.prototype.$regexps = regexps
-Vue.prototype.$net = net
+// Vue.prototype.$utils = utils
+// Vue.prototype.$regexps = regexps
+// Vue.prototype.$net = net
 
-Vue.use(VueAxios, axios)
-Vue.config.productionTip = process.env.NODE_ENV === 'development'
+// Vue.config.productionTip = process.env.NODE_ENV === 'development'
 
 // 路由拦截
 // router.beforeEach((to: any, from: any, next: any) => {
@@ -31,8 +28,4 @@ Vue.config.productionTip = process.env.NODE_ENV === 'development'
 //   next()
 // })
 
-new Vue({
-  router,
-  store,
-  render: (h: any) => h(App)
-}).$mount('#app')
+createApp(App).use(store).use(router).mount('#app')

@@ -7,23 +7,25 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Options, Vue } from 'vue-class-component'
 import HelloWorld from '@/components/HelloWorld.vue'
 
-@Component({
+@Options({
   components: { HelloWorld }
 })
 
 export default class Home extends Vue {
-  testStore: string = this.$store.state.home.test
-  created(): void {
+  testStore = '123'
+  created (): void {
     console.log('create')
     this.init()
   }
-  mounted(): void {
-   console.log('mounted')
+
+  mounted (): void {
+    console.log('mounted')
   }
-  init(): void {
+
+  init (): void {
     console.log('init')
   }
 }
