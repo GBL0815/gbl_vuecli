@@ -7,35 +7,44 @@
 
 <script lang="ts">
 import { Vue } from 'vue-class-component'
+import { util, net } from '@/util/index'
 
 export default class Help extends Vue {
-  dateTime = '123'
+  dateTime = util.getNowDate(0)
   created (): void {
     this.init()
   }
 
   init (): void {
-    Promise.all([this.getTest1(), this.getTest2()]).then((res) => {
+    Promise.all([this.pro1, this.pro2]).then((res) => {
       console.log(res, '接口全部请求成功')
     })
   }
 
-  getTest1 () {
-    return new Promise((resolve: any, reject: any) => {
-      // this.$net('/test').then((res: any) => {
-      //   console.log('接口1请求成功')
-      //   resolve(res.data)
-      // })
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  pro1 () {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/no-unused-vars
+    const pro1 = new Promise((resolve: any, reject: any) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      net('/test', 'get', {}).then((res: any) => {
+        console.log('接口1请求成功')
+        resolve(res.data)
+      })
     })
+    return pro1
   }
 
-  getTest2 () {
-    return new Promise((resolve: any, reject: any) => {
-      // this.$net('/test').then((res: any) => {
-      //   console.log('接口2请求成功')
-      //   resolve(res.data)
-      // })
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  pro2 () {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/no-unused-vars
+    const pro2 = new Promise((resolve: any, reject: any) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      net('/test', 'get', {}).then((res: any) => {
+        console.log('接口2请求成功')
+        resolve(res.data)
+      })
     })
+    return pro2
   }
 }
 </script>

@@ -34,9 +34,11 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^7.0.1",
+    "image-webpack-loader": "^7.0.1",
     "lint-staged": "^10.4.0",
     "sass": "^1.27.0",
     "sass-loader": "^10.0.3",
+    "terser-webpack-plugin": "^4.2.3",
     "typescript": "~4.0.3"
   },
   "eslintConfig": {
@@ -52,7 +54,10 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {}
+    "rules": {
+      "no-console": "off",
+      "no-debugger": "off"
+    }
   },
   "browserslist": [
     "> 1%",

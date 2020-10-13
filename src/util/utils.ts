@@ -1,6 +1,6 @@
 export default {
   // 获取当前时间
-  getNowDate(type: number) {
+  getNowDate (type: number) {
     const nowDate = new Date()
     const nowDay = nowDate.getDay()
     const year: string = nowDate.getFullYear() + ''
