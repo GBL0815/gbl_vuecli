@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { computed, onMounted } from 'vue'
+import { computed, onMounted, getCurrentInstance } from 'vue'
 import util from '../../util/index'
 
 import HelloWorld from '../../components/HelloWorld.vue'
@@ -17,12 +17,13 @@ export default {
   name: 'help',
   components: { HelloWorld },
   setup () {
-    const { router, store, utils, net } = util()
+    const { ctx } = getCurrentInstance()
+    const { router, store, utils } = util()
     // 计算属性
     const dateTime = computed(() => utils.getNowDate(0))
     // 生命周期
     onMounted(() => {
-      net(`${store.state.http.test}/test`).then(res => {
+      ctx.$net(`${store.state.http.test}/test`).then(res => {
         console.log('请求成功')
       })
     })
