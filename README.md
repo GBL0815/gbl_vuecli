@@ -14,7 +14,7 @@ axios + scss + eslint
 
 ## vue+ts
 
-vue-cli3 + vue2.x
+vue-cli3 + vue3.x
 yarn
 scss + ts + tslint + pwa
 
