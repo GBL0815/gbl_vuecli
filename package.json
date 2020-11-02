@@ -1,6 +1,6 @@
 {
-  "name": "gbl_cli",
-  "version": "0.9.0",
+  "name": "vue_ts",
+  "version": "0.9.1",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
