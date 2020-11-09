@@ -29,7 +29,6 @@ module.exports = {
               pure_funcs: ['console.log']
             }
           },
-          sourceMap: false,
           parallel: true // 使用多进程提高构件速度
         })
       )
