@@ -1,27 +1,13 @@
-# gblcli
+# vue2.X
 
-## vue
+## 项目配置
 
-vue-cli4 + vue3.x
-yarn
-axios + scss + eslint + pwa
+yarn install
 
-## vue(vite)
+## 项目启动
 
-vite + vue3.x
-yarn
-axios + scss + eslint
+yarn dev
 
-## vue+ts
+## 项目打包
 
-vue-cli3 + vue3.x
-yarn
-scss + ts + tslint + pwa
-
-## uniApp
-
-有待更新
-
-## react
-
-有待更新
+yarn build
