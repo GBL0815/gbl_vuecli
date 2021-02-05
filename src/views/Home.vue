@@ -8,14 +8,20 @@
 </template>
 
 <script>
-import { computed, onMounted, ref, reactive, watchEffect } from 'vue'
+import {
+  computed,
+  onMounted,
+  // ref,
+  reactive,
+  watchEffect
+} from 'vue'
 import utils from '@/util/index'
 
 export default {
   setup () {
     const { router, store } = utils()
     // 变量
-    const color = ref('red')
+    // const color = ref('red')
     const goHelp = reactive({ value: 'toHelp' })
     // 计算属性
     const testStore = computed(() => store.state.home.test)
@@ -33,12 +39,13 @@ export default {
       router.push('/help')
     }
     const test = () => {
-      color.value = 'blue'
+      // color.value = 'blue'
+      console.log('还在测试中')
     }
 
     return {
       goHelp,
-      color,
+      // color,
       testStore,
       testGetter,
       goHelpRoute,
@@ -48,8 +55,8 @@ export default {
 }
 </script>
 
-<style scoped lang="scss" vars="{ color }">
+<style scoped lang="scss">
 .test {
-  color: var(--color);
+  color: v-bind(color);
 }
 </style>

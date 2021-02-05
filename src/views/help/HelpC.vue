@@ -5,7 +5,9 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import {
+  computed
+} from 'vue'
 import utils from '@/util/index'
 
 export default {

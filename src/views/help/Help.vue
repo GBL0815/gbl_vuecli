@@ -8,7 +8,11 @@
 </template>
 
 <script>
-import { computed, onMounted, getCurrentInstance } from 'vue'
+import {
+  computed,
+  onMounted,
+  getCurrentInstance
+} from 'vue'
 import utils from '@/util/index'
 // 组件
 import HelloWorld from '@/components/HelloWorld.vue'
