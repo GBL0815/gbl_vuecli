@@ -16,24 +16,23 @@ module.exports = {
       .end()
   },
   configureWebpack: config => {
-    if (!isDevelopment) {
+    config.optimization = {
       // 代码压缩
-      config.plugins.push(
+      minimizer: [
         new TerserPlugin({
           terserOptions: {
+            ecma: undefined,
+            parse: {},
             compress: {
-              warnings: false,
-              drop_debugger: true,
               drop_console: true,
+              drop_debugger: true,
               pure_funcs: ['console.log']
             }
           },
-          parallel: true // 使用多进程提高构件速度
+          parallel: true
         })
-      )
-    }
-    // 抽离公共文件
-    config.optimization = {
+      ],
+      // 抽离公共文件
       splitChunks: {
         cacheGroups: {
           vendor: {
