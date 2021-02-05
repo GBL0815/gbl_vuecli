@@ -33,8 +33,23 @@ module.exports = {
         })
       )
     }
-    // 抽离公共文件
     config.optimization = {
+      // 代码压缩
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            ecma: undefined,
+            parse: {},
+            compress: {
+              drop_console: true,
+              drop_debugger: true,
+              pure_funcs: ['console.log']
+            }
+          },
+          parallel: true
+        })
+      ],
+      // 抽离公共文件
       splitChunks: {
         cacheGroups: {
           vendor: {
