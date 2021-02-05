@@ -18,12 +18,12 @@ export default {
   components: { HelloWorld },
   setup () {
     const { ctx } = getCurrentInstance()
-    const { router, store, utils } = util()
+    const { router, utils } = util()
     // 计算属性
     const dateTime = computed(() => utils.getNowDate(0))
     // 生命周期
     onMounted(() => {
-      ctx.$net(`${store.state.http.test}/test`).then(res => {
+      ctx.$net('/api/test').then(res => {
         console.log('请求成功')
       })
     })
