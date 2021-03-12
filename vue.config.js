@@ -17,22 +17,6 @@ module.exports = {
       .end()
   },
   configureWebpack: config => {
-    if (!isDevelopment) {
-      // 代码压缩
-      config.plugins.push(
-        new TerserPlugin({
-          terserOptions: {
-            compress: {
-              warnings: false,
-              drop_debugger: true,
-              drop_console: true,
-              pure_funcs: ['console.log']
-            }
-          },
-          parallel: true // 使用多进程提高构件速度
-        })
-      )
-    }
     config.optimization = {
       // 代码压缩
       minimizer: [
