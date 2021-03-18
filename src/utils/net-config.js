@@ -17,12 +17,9 @@ const net = (url, method = 'get', params) => {
   return new Promise((resolve, reject) => {
     netServer.then(res => {
       // 统一错误处理
-      if (res.data.code === 700) {
-        return new Promise((resolve, reject) => {}).catch(e => { console.log(e) })
-      }
-      if (res.data.code !== 0 || res.data.success === false) {
-        return new Promise((resolve, reject) => {}).catch(e => { console.log(e) })
-      }
+      // if (res.data.code !== 0 || res.data.success === false) {
+      //   return new Promise((resolve, reject) => {}).catch(e => { console.log(e) })
+      // }
       resolve(res.data)
     }).catch(e => {
       console.log(e)
