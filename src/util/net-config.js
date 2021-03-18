@@ -1,5 +1,5 @@
 import axios from 'axios'
-import router from '../route'
+// import router from '../route'
 
 const net = (url, method = 'get', params) => {
   const netServer = axios({
@@ -22,13 +22,9 @@ const net = (url, method = 'get', params) => {
       //   router.push('/login')
       // }
       // 统一错误处理
-      if (res.data.code === 700) {
-        router.push('/login')
-        return new Promise((resolve, reject) => {}).catch(e => { console.log(e) })
-      }
-      if (res.data.code !== 0 || res.data.success === false) {
-        return new Promise((resolve, reject) => {}).catch(e => { console.log(e) })
-      }
+      // if (res.data.code !== 0 || res.data.success === false) {
+      //   return new Promise((resolve, reject) => {}).catch(e => { console.log(e) })
+      // }
       resolve(res.data)
     }).catch(e => {
       console.log(e)
