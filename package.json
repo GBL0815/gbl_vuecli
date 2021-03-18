@@ -1,6 +1,6 @@
 {
   "name": "vue_ts",
-  "version": "0.9.5",
+  "version": "0.9.8",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
@@ -16,19 +16,19 @@
     "vuex": "^4.0.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.17.0",
-    "@typescript-eslint/parser": "^4.17.0",
-    "@vue/cli-plugin-babel": "~4.5.11",
-    "@vue/cli-plugin-eslint": "~4.5.11",
-    "@vue/cli-plugin-pwa": "~4.5.11",
-    "@vue/cli-plugin-router": "~4.5.11",
-    "@vue/cli-plugin-typescript": "~4.5.11",
-    "@vue/cli-plugin-vuex": "~4.5.11",
-    "@vue/cli-service": "~4.5.11",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "@vue/cli-plugin-babel": "~4.5.12",
+    "@vue/cli-plugin-eslint": "~4.5.12",
+    "@vue/cli-plugin-pwa": "~4.5.12",
+    "@vue/cli-plugin-router": "~4.5.12",
+    "@vue/cli-plugin-typescript": "~4.5.12",
+    "@vue/cli-plugin-vuex": "~4.5.12",
+    "@vue/cli-service": "~4.5.12",
     "@vue/compiler-sfc": "^3.0.7",
     "@vue/eslint-config-standard": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
-    "eslint": "^7.21.0",
+    "eslint": "^7.22.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
@@ -56,7 +56,8 @@
     },
     "rules": {
       "no-console": "off",
-      "no-debugger": "off"
+      "no-debugger": "off",
+      "@typescript-eslint/no-var-requires": 0
     }
   },
   "browserslist": [

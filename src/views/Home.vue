@@ -16,23 +16,23 @@ import HelloWorld from '@/components/HelloWorld.vue'
   components: { HelloWorld }
 })
 export default class Home extends Vue {
-  router = useRouter()
-  store = useStore()
-  testStore = this.store.state.home.test
-  created (): void {
+  public router = useRouter()
+  public store = useStore()
+  public testStore = this.store.state.home.test
+  public created (): void {
     console.log('create')
     this.init()
   }
 
-  mounted (): void {
+  public mounted (): void {
     console.log('mounted')
   }
 
-  init (): void {
+  public init (): void {
     console.log('init')
   }
 
-  toHelp (): void {
+  public toHelp (): void {
     this.router.push('/help')
   }
 }

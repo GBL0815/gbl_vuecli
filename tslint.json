@@ -15,6 +15,7 @@
     "interface-name": false,
     "no-consecutive-blank-lines": false,
     "object-literal-sort-keys": false,
+    "object-literal-key-quotes": false,
     "ordered-imports": false,
     "quotemark": [true, "single"],
     "semicolon": false,

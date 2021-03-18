@@ -1,7 +1,7 @@
 const axios = require('axios')
-const router = require('@/route')
+// const router = require('@/route')
 
-const net = (url: string, method = 'get', params: any) => {
+const net = (url: string, method = 'get', params: unknown = {}): Promise<unknown> => {
   const netServer = axios({
     url: process.env.VUE_APP_URL + url,
     method,
@@ -10,29 +10,25 @@ const net = (url: string, method = 'get', params: any) => {
     // baseURL: process.env.NODE_ENV === 'development' ? '' : '/base/',
     timeout: 10000,
     headers: {
-      'Authorization': localStorage.getItem('Authorization'),
+      Authorization: localStorage.getItem('Authorization'),
       'Content-Type': 'application/json;charset=UTF-8'
     }
   })
 
-  return new Promise((resolve, reject) => {
-    netServer.then((res: any) => {
+  return new Promise((resolve) => {
+    netServer.then((res: { data: unknown }) => {
       // 未登陆处理
       // let headerCookie = localStorage.getItem('Authorization')
       // if (headerCookie === '' || headerCookie === null) {
-      //   return new Promise(() => {}).catch(e => { console.log(e) })
+      //   return new Promise(() => {}).catch(e: unknown => { console.log(e) })
       //   router.default.push('/login')
       // }
       // 统一错误处理
-      if (res.data.code === 700) {
-        router.default.push('/login')
-        return new Promise(() => {}).catch((e: any) => { console.log(e) })
-      }
-      if (res.data.code !== 200 || res.data.success === false) {
-        return new Promise(() => {}).catch((e: any) => { console.log(e) })
-      }
+      // if (res.data.code !== 200 || res.data.success === false) {
+      //   return new Promise(() => {}).catch((e: unknown) => { console.log(e) })
+      // }
       resolve(res.data)
-    }).catch((e: any) => {
+    }).catch((e: unknown) => {
       console.log(e)
     })
   })

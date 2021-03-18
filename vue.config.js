@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const TerserPlugin = require('terser-webpack-plugin')
 
 const isDevelopment = process.env.NODE_ENV === 'development'

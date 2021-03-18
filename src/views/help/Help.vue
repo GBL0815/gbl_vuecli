@@ -10,41 +10,35 @@ import { Vue } from 'vue-class-component'
 import { util, net } from '@/util/index'
 
 export default class Help extends Vue {
-  dateTime = util.getNowDate(0)
-  created (): void {
+  public dateTime = util.getNowDate(0)
+  public created (): void {
     this.init()
   }
 
-  init (): void {
-    Promise.all([this.pro1, this.pro2]).then((res) => {
+  public init (): void {
+    Promise.all([this.pro1(), this.pro2()]).then((res) => {
       console.log(res, '接口全部请求成功')
+    }).catch((error) => {
+      console.log(error)
     })
   }
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  pro1 () {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/no-unused-vars
-    const pro1 = new Promise((resolve: any, reject: any) => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      net('/test', 'get', {}).then((res: any) => {
-        console.log('接口1请求成功')
-        resolve(res.data)
+  pro1 (): Promise<unknown> {
+    return new Promise(resolve => {
+      net('/test', 'get').then((res: unknown) => {
+        console.log(res)
+        resolve('接口1')
       })
     })
-    return pro1
   }
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  pro2 () {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/no-unused-vars
-    const pro2 = new Promise((resolve: any, reject: any) => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      net('/test', 'get', {}).then((res: any) => {
-        console.log('接口2请求成功')
-        resolve(res.data)
+  pro2 (): Promise<unknown> {
+    return new Promise(resolve => {
+      net('/test', 'get').then((res: unknown) => {
+        console.log(res)
+        resolve('接口2')
       })
     })
-    return pro2
   }
 }
 </script>
