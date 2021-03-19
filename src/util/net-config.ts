@@ -20,15 +20,15 @@ const net = (url: string, method = 'get', params: unknown = {}): Promise<unknown
       // 未登陆处理
       // let headerCookie = localStorage.getItem('Authorization')
       // if (headerCookie === '' || headerCookie === null) {
-      //   return new Promise(() => {}).catch(e: unknown => { console.log(e) })
+      //   return new Promise(() => {}).catch(e: Error => { console.log(e) })
       //   router.default.push('/login')
       // }
       // 统一错误处理
       // if (res.data.code !== 200 || res.data.success === false) {
-      //   return new Promise(() => {}).catch((e: unknown) => { console.log(e) })
+      //   return new Promise(() => {}).catch((e: Error) => { console.log(e) })
       // }
       resolve(res.data)
-    }).catch((e: unknown) => {
+    }).catch((e: Error) => {
       console.log(e)
     })
   })

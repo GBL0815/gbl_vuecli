@@ -7,35 +7,42 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component'
+import {
+  defineComponent,
+  onMounted,
+  ref
+} from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
+
 import HelloWorld from '@/components/HelloWorld.vue'
 
-@Options({
-  components: { HelloWorld }
+export default defineComponent({
+  components: { HelloWorld },
+  setup () {
+    const router = useRouter()
+    const store = useStore()
+    const testStore = ref<string>(store.state.home.test)
+
+    onMounted((): void => {
+      console.log('mounted')
+      init()
+    })
+
+    const init = (): void => {
+      console.log('init')
+    }
+
+    const toHelp = (): void => {
+      router.push('/help')
+    }
+
+    return {
+      testStore,
+      toHelp
+    }
+  }
 })
-export default class Home extends Vue {
-  public router = useRouter()
-  public store = useStore()
-  public testStore = this.store.state.home.test
-  public created (): void {
-    console.log('create')
-    this.init()
-  }
-
-  public mounted (): void {
-    console.log('mounted')
-  }
-
-  public init (): void {
-    console.log('init')
-  }
-
-  public toHelp (): void {
-    this.router.push('/help')
-  }
-}
 </script>
 
 <style scoped lang="scss">
