@@ -1,6 +1,6 @@
 {
   "name": "vue_ts",
-  "version": "0.9.8",
+  "version": "0.9.85",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",

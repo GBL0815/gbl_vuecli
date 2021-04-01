@@ -23,6 +23,7 @@
     "whitespace": true,
     "no-var-requires": false,
     "no-console": false,
-    "no-empty": false
+    "no-empty": false,
+    "space-before-function-paren": true
   }
 }
