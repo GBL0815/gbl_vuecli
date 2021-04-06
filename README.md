@@ -11,3 +11,7 @@ yarn dev
 ## 项目打包
 
 yarn build
+
+## PS
+
+image-webpack-loader 需要用cnpm安装
