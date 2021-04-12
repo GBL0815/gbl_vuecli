@@ -19,13 +19,13 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   setup () {
-    const { ctx } = getCurrentInstance()
+    const { proxy } = getCurrentInstance()
     const { router, util } = utils()
     // 计算属性
     const dateTime = computed(() => util.getNowDate(0))
     // 生命周期
     onMounted(() => {
-      ctx.$net('/test').then(res => {
+      proxy.$net('/test').then(res => {
         console.log('请求成功')
       })
     })

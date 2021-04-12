@@ -1,6 +1,6 @@
 {
   "name": "vue3",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "ISC",
   "scripts": {
     "build": "vue-cli-service build",
@@ -24,10 +24,10 @@
     "@vue/compiler-sfc": "^3.0.11",
     "@vue/eslint-config-standard": "^6.0.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.23.0",
+    "eslint": "^7.24.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-vue": "^7.8.0",
     "image-webpack-loader": "^7.0.1",
