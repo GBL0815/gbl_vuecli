@@ -17,13 +17,13 @@ export default {
   name: 'help',
   components: { HelloWorld },
   setup () {
-    const { ctx } = getCurrentInstance()
+    const { proxy } = getCurrentInstance()
     const { router, utils } = util()
     // 计算属性
     const dateTime = computed(() => utils.getNowDate(0))
     // 生命周期
     onMounted(() => {
-      ctx.$net('/api/test').then(res => {
+      proxy.$net('/api/test').then(res => {
         console.log('请求成功')
       })
     })
