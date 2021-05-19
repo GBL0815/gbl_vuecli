@@ -1,6 +1,6 @@
 const home = {
   state: {
-    test: 'hello',
+    test: 'hello'
   },
   mutations: {},
   actions: {}
