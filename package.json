@@ -1,6 +1,6 @@
 {
   "name": "vue_vite",
-  "version": "0.8.96",
+  "version": "0.8.97",
   "license": "ISC",
   "scripts": {
     "dev": "vite",
@@ -17,16 +17,16 @@
     "@vue/compiler-sfc": "^3.0.11",
     "@vue/eslint-config-standard": "^6.0.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.25.0",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint": "^7.26.0",
+    "eslint-plugin-import": "^2.23.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-vue": "^7.9.0",
-    "lint-staged": "^10.5.4",
-    "sass": "^1.32.12",
+    "lint-staged": "^11.0.0",
+    "sass": "^1.32.13",
     "sass-loader": "^10.1.1",
-    "vite": "^2.2.4"
+    "vite": "^2.3.3"
   },
   "eslintConfig": {
     "root": true,
