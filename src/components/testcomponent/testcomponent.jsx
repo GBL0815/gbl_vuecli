@@ -3,10 +3,7 @@ import { withRouter } from "react-router-dom"
 import PropTypes from 'prop-types'
 
 class testcomponent extends PureComponent {
-  componentWillMount() {}
   componentDidMount() {}
-  componentWillReceiveProps(nextProps) {}
-  componentWillUpdate(nextProps, nextState) {}
   componentDidUpdate() {}
   componentWillUnmount() {}
 

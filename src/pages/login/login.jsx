@@ -1,10 +1,7 @@
 import React, { PureComponent } from 'react'
 
 class login extends PureComponent {
-  componentWillMount() {}
   componentDidMount() {}
-  componentWillReceiveProps(nextProps) {}
-  componentWillUpdate(nextProps, nextState) {}
   componentDidUpdate() {}
   componentWillUnmount() {}
 
