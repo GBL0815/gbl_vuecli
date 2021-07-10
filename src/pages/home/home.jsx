@@ -1,13 +1,14 @@
 import React, { PureComponent } from 'react'
-import { Route } from 'react-router-dom'
-import { connect } from 'react-redux'
+import { connect } from 'dva';
 import './home.scss'
-
-import { add, minus } from '@/redux/action'
 
 import Testcomponent from '@/components/testcomponent/testcomponent'
 
-class home extends PureComponent {
+@connect(({ home, index }) => ({
+  home,
+  index,
+}))
+class Home extends PureComponent {
   state = {
     name: 'gblTest'
   }
@@ -27,38 +28,23 @@ class home extends PureComponent {
     console.log('卸载时调用')
   }
 
-  testFunction = () => {
-    console.log(this.state.name)
-  }
   consoleState = () => {
-    console.log(this.props.counter)
+    const { dispatch, home } = this.props
+    dispatch({type: 'home/test'})
+    console.log(home)
   }
 
   render() {
-    const { counter, add, minus } = this.props
     return (
       <div className="home">
-        <div onClick={this.consoleState}>{counter}</div>
-        <div onClick={add}>add</div>
-        <div onClick={minus}>minus</div>
+        <div onClick={this.consoleState}>123</div>
         <Testcomponent test="test" callback={this.testFunction} />
         <div>
-          {
-            this.props.routes.map(({path, Component, exact = true, child = []}, key) => {
-              return <Route exact = { exact } path = { path } key = { key }
-                render = { props => (<Component { ...props } routes = { child } />) }
-              />
-            })
-          }
+          {this.props.children}
         </div>
       </div>
     )
   }
 }
 
-export default connect(
-  state => ({counter: state.counter}),
-  {
-     add, minus
-  }
-)(home)
+export default Home

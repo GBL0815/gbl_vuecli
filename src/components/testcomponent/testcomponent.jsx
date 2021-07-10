@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { withRouter } from "react-router-dom"
+import { withRouter } from 'dva/router'
 import PropTypes from 'prop-types'
 
 class testcomponent extends PureComponent {

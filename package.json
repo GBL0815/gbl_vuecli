@@ -4,26 +4,24 @@
   "private": true,
   "scripts": {
     "dev": "react-app-rewired start",
-    "build": "dotenv -e .env.prod react-app-rewired build"
+    "build": "dotenv -e .env.prod react-app-rewired build",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.14.5",
     "axios": "^0.21.1",
     "dotenv-cli": "^4.0.0",
-    "http-proxy-middleware": "^2.0.0",
+    "dva": "^2.4.1",
+    "http-proxy-middleware": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-app-rewired": "^2.1.8",
     "react-dom": "^17.0.2",
-    "react-redux": "^7.2.4",
-    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "redux": "^4.1.0",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0",
-    "web-vitals": "^2.0.1"
+    "web-vitals": "^2.1.0"
   },
   "devDependencies": {
-    "node-sass": "^6.0.0"
+    "node-sass": "^6.0.1"
   },
   "eslintConfig": {
     "extends": "react-app"
