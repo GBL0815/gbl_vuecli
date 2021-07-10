@@ -4,10 +4,6 @@ import './home.scss'
 
 import Testcomponent from '@/components/testcomponent/testcomponent'
 
-@connect(({ home, index }) => ({
-  home,
-  index,
-}))
 class Home extends PureComponent {
   state = {
     name: 'gblTest'
@@ -29,15 +25,18 @@ class Home extends PureComponent {
   }
 
   consoleState = () => {
-    const { dispatch, home } = this.props
+    const { dispatch } = this.props
     dispatch({type: 'home/test'})
-    console.log(home)
   }
 
   render() {
+    const {
+      home: { name }
+    } = this.props
+
     return (
       <div className="home">
-        <div onClick={this.consoleState}>123</div>
+        <div onClick={this.consoleState}>{name}</div>
         <Testcomponent test="test" callback={this.testFunction} />
         <div>
           {this.props.children}
@@ -47,4 +46,6 @@ class Home extends PureComponent {
   }
 }
 
-export default Home
+export default connect(({ home }) => ({
+  home,
+}))(Home)
