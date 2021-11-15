@@ -7,7 +7,7 @@
     "build": "dotenv -e .env.prod react-app-rewired build"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.24.0",
     "dotenv-cli": "^4.0.0",
     "dva": "^2.4.1",
     "http-proxy-middleware": "^2.0.1",
@@ -16,7 +16,7 @@
     "react-app-rewired": "^2.1.8",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "web-vitals": "^2.1.0"
+    "web-vitals": "^2.1.2"
   },
   "devDependencies": {
     "node-sass": "^6.0.1"
