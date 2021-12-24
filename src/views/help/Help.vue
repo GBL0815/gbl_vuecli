@@ -13,9 +13,9 @@ import {
   onMounted,
   getCurrentInstance
 } from 'vue'
-import util from '../../util/index'
+import util from '@/util/index'
 
-import HelloWorld from '../../components/HelloWorld.vue'
+import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'help_com',

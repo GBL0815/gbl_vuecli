@@ -1,8 +1,4 @@
-import { createStore } from 'vuex'
+import { defineStore } from 'pinia'
 import home from './modules/home'
 
-export default createStore({
-  modules: {
-    home
-  }
-})
+export const useHomeStore = defineStore('home', home)

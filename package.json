@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "pinia": "^2.0.8",
     "vue": "^3.2.6",
-    "vue-router": "^4.0.11",
-    "vuex": "^4.0.2"
+    "vue-router": "^4.0.11"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.1",

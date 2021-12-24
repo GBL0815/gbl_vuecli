@@ -1,37 +1,36 @@
 <template>
   <div class="home">
     <div @click="goHelpRoute">{{ goHelp }}</div>
-    <div>{{ testStore }}</div>
-    <div>{{ testGetter }}</div>
+    <div>{{ homeStore.text }}</div>
+    <div>{{ homeStore.hello }}</div>
     <img src="../assets/test.jpg" alt="">
   </div>
 </template>
 
 <script>
 import {
-  computed,
   onMounted,
   ref,
   watchEffect
 } from 'vue'
-import util from '../util/index'
+import { useHomeStore } from '@/store'
+import util from '@/util/index'
 
 export default {
   name: 'home_com',
   setup () {
-    const { router, store } = util()
+    const { router } = util()
+    // pinia
+    const homeStore = useHomeStore()
     // 变量
     const goHelp = ref('toHelp')
-    // 计算属性
-    const testStore = computed(() => store.state.home.test)
-    const testGetter = computed(() => store.getters.test)
     // 副作用
     watchEffect(() => {
-      console.log(testStore)
+      console.log(homeStore)
     })
     // 生命周期
     onMounted(() => {
-      store.dispatch('test')
+      homeStore.test()
     })
     // 方法
     const goHelpRoute = () => {
@@ -40,8 +39,7 @@ export default {
 
     return {
       goHelp,
-      testStore,
-      testGetter,
+      homeStore,
       goHelpRoute
     }
   }

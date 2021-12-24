@@ -1,24 +1,16 @@
 const home = {
-  state: {
-    test: 'hello'
-  },
+  state: () => ({
+    text: 'hello'
+  }),
   getters: {
-    hello (state) {
-      return `${state.test}啊`
-    },
-    test (state, getters) {
-      return `${getters.hello}${state.test}`
-    }
-  },
-  mutations: {
-    test (state) {
-      state.test = 'test'
+    hello: (state) => {
+      return `${state.text}啊`
     }
   },
   actions: {
-    test (context) {
+    test () {
       setTimeout(() => {
-        context.commit('test')
+        this.text = 'test'
       }, 2000)
     }
   }

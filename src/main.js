@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './route'
-import store from './store/index'
+import { createPinia } from 'pinia'
 import './style/common.scss'
 import net from './util/net-config'
 
@@ -19,8 +19,8 @@ router.beforeEach((to, from, next) => {
 })
 
 const app = createApp(App)
-app.use(store)
 app.use(router)
+app.use(createPinia())
 app.config.productionTip = process.env.NODE_ENV === 'development'
 app.config.devtools = process.env.NODE_ENV === 'development'
 app.config.globalProperties.$net = net

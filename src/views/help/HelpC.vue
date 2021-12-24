@@ -8,7 +8,7 @@
 import {
   computed
 } from 'vue'
-import util from '../../util/index'
+import util from '@/util/index'
 
 export default {
   name: 'help_C',
