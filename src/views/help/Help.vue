@@ -8,13 +8,17 @@
 </template>
 
 <script>
-import { computed, onMounted, getCurrentInstance } from 'vue'
+import {
+  computed,
+  onMounted,
+  getCurrentInstance
+} from 'vue'
 import util from '../../util/index'
 
 import HelloWorld from '../../components/HelloWorld.vue'
 
 export default {
-  name: 'help',
+  name: 'help_com',
   components: { HelloWorld },
   setup () {
     const { proxy } = getCurrentInstance()
@@ -23,7 +27,7 @@ export default {
     const dateTime = computed(() => utils.getNowDate(0))
     // 生命周期
     onMounted(() => {
-      proxy.$net('/api/test').then(res => {
+      proxy.$net('/api/test').then(() => {
         console.log('请求成功')
       })
     })

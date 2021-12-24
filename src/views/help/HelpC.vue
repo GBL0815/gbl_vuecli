@@ -5,11 +5,13 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import {
+  computed
+} from 'vue'
 import util from '../../util/index'
 
 export default {
-  name: 'helpC',
+  name: 'help_C',
   setup () {
     const { utils } = util()
     // 计算属性

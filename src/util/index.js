@@ -4,7 +4,7 @@ import { useStore } from 'vuex'
 import regexp from './regexp'
 import util from './util'
 
-const utils = () => {
+const utilFun = () => {
   const route = useRoute()
   const router = useRouter()
   const store = useStore()
@@ -20,4 +20,4 @@ const utils = () => {
   }
 }
 
-export default utils
+export default utilFun

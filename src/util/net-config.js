@@ -1,7 +1,7 @@
 import axios from 'axios'
 // import router from '../route'
 
-const net = (url, method = 'get', params) => {
+const net = (url, params, method = 'get') => {
   const netServer = axios({
     url,
     method,
@@ -14,7 +14,7 @@ const net = (url, method = 'get', params) => {
   })
 
   return new Promise((resolve, reject) => {
-    netServer.then(res => {
+    netServer.then((res) => {
       // 未登陆处理
       // let headerCookie = localStorage.getItem('Authorization')
       // if (headerCookie === '' || headerCookie === null) {
@@ -26,7 +26,7 @@ const net = (url, method = 'get', params) => {
       //   return new Promise((resolve, reject) => {}).catch(e => { console.log(e) })
       // }
       resolve(res.data)
-    }).catch(e => {
+    }).catch((e) => {
       console.log(e)
     })
   })

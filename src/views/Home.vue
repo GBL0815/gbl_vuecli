@@ -8,11 +8,16 @@
 </template>
 
 <script>
-import { computed, onMounted, ref, watchEffect } from 'vue'
+import {
+  computed,
+  onMounted,
+  ref,
+  watchEffect
+} from 'vue'
 import util from '../util/index'
 
 export default {
-  name: 'home',
+  name: 'home_com',
   setup () {
     const { router, store } = util()
     // 变量
