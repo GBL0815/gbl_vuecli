@@ -1,15 +1,17 @@
 import axios from 'axios'
 // import router from '../route'
 
-const net = (url, params, method = 'get') => {
+const net = (url, method = 'get', data, header) => {
   const netServer = axios({
     url,
     method,
-    params,
+    params: method === 'get' ? data : null,
+    data: method === 'get' ? null : data,
     timeout: 10000,
     headers: {
       Authorization: localStorage.getItem('Authorization'),
-      'Content-Type': 'application/json;charset=UTF-8'
+      'Content-Type': 'application/json;charset=UTF-8',
+      ...header
     }
   })
 
