@@ -3,7 +3,7 @@
     <div @click="goHelpRoute">{{ goHelp }}</div>
     <div>{{ homeStore.text }}</div>
     <div>{{ homeStore.hello }}</div>
-    <img src="../assets/test.jpg" alt="">
+    <img src="@/assets/image/test.jpg" alt="">
   </div>
 </template>
 
@@ -13,12 +13,12 @@ import {
   ref,
   watchEffect
 } from 'vue'
-import { useHomeStore } from '@/store'
+import { useHomeStore } from '@/stores'
 import util from '@/util/index'
 
 export default {
-  name: 'home_com',
-  setup () {
+  name: 'homeView',
+  setup() {
     const { router } = util()
     // pinia
     const homeStore = useHomeStore()
@@ -46,5 +46,4 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

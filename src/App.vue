@@ -1,10 +1,4 @@
-<template>
-  <router-view />
-</template>
-
-<script>
-// import { ref, computed, getCurrentInstance, onMounted } from 'vue'
-
+<script lang="ts">
 export default {
   setup () {
     return {}
@@ -12,5 +6,9 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<template>
+  <RouterView />
+</template>
+
+<style scoped lang="scss">
 </style>

@@ -3,7 +3,7 @@ const home = {
     text: 'hello'
   }),
   getters: {
-    hello: (state) => {
+    hello: (state: any) => {
       return `${state.text}啊`
     }
   },
